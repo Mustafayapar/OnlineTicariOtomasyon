@@ -1,0 +1,20 @@
+﻿@model OnlineTicariOtomasyon.Models.Entity.Category
+@{
+    ViewData["Title"] = "GetCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h1>Update Category</h1>
+<br />
+
+@using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.CategoryName)
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+        @Html.HiddenFor(x=> x.CategoryId)
+    </div>
+    <br />
+    <button class="btn btn-primary mt-3">Update</button>
+}

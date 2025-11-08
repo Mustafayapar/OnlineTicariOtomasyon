@@ -1,0 +1,20 @@
+﻿@model OnlineTicariOtomasyon.Models.Entity.Category
+
+@{
+    ViewData["Title"] = "Add Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2>Add New Category</h2>
+<br />
+
+<form asp-action="AddCategory" method="post">
+    <div class="form-group">
+        <label asp-for="CategoryName"></label>
+        <input asp-for="CategoryName" class="form-control" />
+        <span asp-validation-for="CategoryName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-info mt-3">Save</button>
+</form>

@@ -1,0 +1,36 @@
+﻿@using OnlineTicariOtomasyon.Models.Entity
+@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-bordered" style="margin-top:20px">
+
+
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Category Name</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryId</td>
+                <td>@item.CategoryName</td>
+                <td><a class="btn btn-danger" href="/Category/DeleteCategory/@item.CategoryId">Delete</a></td>
+                <td><a class="btn btn-warning" href="/Category/GetCategory/@item.CategoryId">Update</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<a href="/Category/AddCategory" class="btn btn-primary mb-3">Add New Category</a>
+
+
